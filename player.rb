@@ -2,11 +2,10 @@ class Player
 
   attr_accessor :lives
 
-  def initialize()
+  def initialize(name)
+    @name = name
     @lives = 3
   end
-
-  protected
 
   def removeLive
     @lives -= 1
