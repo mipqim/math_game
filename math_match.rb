@@ -33,7 +33,6 @@ class MathMatch
   def play
     # Host player - Making questions
     host_player_index = 0
-    winner_index = 0
     
     until (game_over?) do
       puts MSG_NEW_TURN
@@ -51,17 +50,13 @@ class MathMatch
       end
 
       if geust_player.lives == 0 
-        puts format(MSG_FINAL_SCORE, @players[winner_index].name, @players[winner_index].lives)
+        puts format(MSG_FINAL_SCORE, host_player.name, host_player.lives)
         break
       end
       puts format(MSG_SCORE, @players[0].name, @players[0].lives, @players[1].name, @players[1].lives)
 
       # Toggle host_player
       host_player_index = 1 - host_player_index
-    end
-
-    if (@players[0].lives == 0)
-      winner_index = 1
     end
 
     puts MSG_GAME_OVER
