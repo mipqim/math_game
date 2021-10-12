@@ -23,7 +23,6 @@ class MathMatch
     p2.lives = PLAYER_LIVES
 
     @players = [p1, p2]
-    @players.shuffle!
   end
 
   def game_over?
@@ -31,6 +30,8 @@ class MathMatch
   end
 
   def play
+    @players.shuffle!
+
     # Host player - Making questions
     host_player_index = 0
     
